@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <script>
+        function calculateProduct(N) {
+            let result = 1;
+
+            for (let i = 1.1; i <= 1.1 + 0.1 * N; i += 0.1) {
+                result *= i;
+            }
+
+            return result;
+        }
+
+        const N = parseFloat(prompt("Введите N:"));
+        if (isNaN(N) || N <= 0) {
+            console.error("Неправильный ввод. Введите положительное число.");
+        } else {
+            const product = calculateProduct(N);
+            const resultParagraph = document.createElement('p');
+
+            resultParagraph.textContent = `Серия умножений N = ${N} это: ${product}`;
+
+            document.body.appendChild(resultParagraph);
+        }
+    </script>
+</body>
+</html>
