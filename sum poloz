@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <script>
+        let sum = 0;
+        let positiveEvenNumbers = [];
+        let numbers = [];
+        let userInput;
+
+        while (true) {
+            userInput = parseFloat(prompt("Введите число (Введите 0 чтобы остановиться):"));
+
+            if (isNaN(userInput)) {
+                alert("Неверный ввод. Пожалуйста, введите число.");
+                continue;
+            }
+
+            if (userInput === 0) {
+                break;
+            }
+
+            numbers.push(userInput);
+        }
+
+        let i = 0;
+
+        while (i < numbers.length && numbers[i] !== 0) {
+            if (numbers[i] > 0 && numbers[i] % 2 === 0) {
+                sum += numbers[i];
+                positiveEvenNumbers.push(numbers[i]);
+            }
+            i++;
+        }
+
+        if (positiveEvenNumbers.length > 0) {
+            alert("Положительные четные числа:");
+            for (let j = 0; j < positiveEvenNumbers.length; j++) {
+                alert(positiveEvenNumbers[j]);
+            }
+            alert(`Сумма всех положительных чисел: ${sum}`);
+        } else {
+            alert(0);
+        }
+    </script>
+</body>
+</html>
